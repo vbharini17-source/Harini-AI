@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f2ec">
+  <title>{{ app_name }} | Learning studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="wordmark" href="/" aria-label="EduGenie home"><span class="mark">e</span> edugenie</a>
+      <span class="top-note"><span class="status-dot"></span> YOUR LEARNING STUDIO</span>
+    </header>
+
+    <section class="intro" aria-labelledby="page-title">
+      <div class="intro-copy">
+        <p class="kicker">A LITTLE MORE CLARITY, EVERY DAY</p>
+        <h1 id="page-title">EduGenie-AI</h1>
+        <p class="lede">Questions, tricky ideas, study notes. Bring what you’re working on; leave with a clearer next step.</p>
+      </div>
+      <div class="orbit" aria-hidden="true"><span class="orbit-core">E</span><span class="orbit-tag tag-one">ASK</span><span class="orbit-tag tag-two">LEARN</span><span class="orbit-tag tag-three">GROW</span></div>
+    </section>
+
+    <section class="workspace" aria-label="Learning tools">
+      <form id="study-form" class="composer">
+        <div class="field-row">
+          <label for="task">I want to</label>
+          <select id="task" name="task">
+            <option value="qa">Ask a question</option>
+            <option value="explain">Understand a concept</option>
+            <option value="quiz">Practice with a quiz</option>
+            <option value="summarize">Summarize my notes</option>
+            <option value="learn">Plan a learning path</option>
+          </select>
+        </div>
+        <div id="level-container" class="field-row level-row" hidden>
+          <label for="level">My level</label>
+          <select id="level" name="level">
+            <option value="beginner">Beginner</option>
+            <option value="intermediate">Intermediate</option>
+            <option value="advanced">Advanced</option>
+          </select>
+        </div>
+        <label id="input-label" class="prompt-label" for="study-input">What are you curious about?</label>
+        <textarea id="study-input" name="input" maxlength="20000" placeholder="For example: Why does the moon appear to change shape?" required></textarea>
+        <div class="composer-foot">
+          <span id="input-hint" class="input-hint">Be specific or paste your study material.</span>
+          <button id="run-button" class="primary-button" type="submit"><span>Let’s explore</span><span class="button-arrow" aria-hidden="true">↗</span></button>
+        </div>
+      </form>
+
+      <section class="answer-panel" aria-labelledby="result-title">
+        <div class="answer-heading"><div><p class="kicker">YOUR WORKSPACE</p><h2 id="result-title">The answer space</h2></div><button id="copy-button" class="copy-button" type="button" aria-label="Copy result" title="Copy result" disabled>Copy</button></div>
+        <div id="result" class="result" aria-live="polite" aria-busy="false"><div class="empty-state"><span class="empty-glyph" aria-hidden="true">✳</span><p>Your next “oh, I get it” starts here.</p><span>Choose a tool and add your question.</span></div></div>
+      </section>
+    </section>
+    <footer><span>EDUGENIE <span class="footer-divider">/</span> BUILT FOR CURIOUS MINDS</span><span id="service-status">Ready when you are</span></footer>
+  </main>
+</body>
+</html>
